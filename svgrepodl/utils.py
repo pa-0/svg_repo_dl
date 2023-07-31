@@ -2,30 +2,11 @@ import os
 import time
 from .Message import Message
 from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
 from progress.bar import IncrementalBar
 
 def downloader(url, path):
 	driver = webdriver.Firefox()
 	runBrowser(driver, url)
-
-def browserConfiguration(path):
-	"""Configure selenium browser
-	Run headless firefox and configure download path
-	
-	Arguments:
-		path {[string]} -- Destination download path
-	Returns:
-		[object] -- Firefox Webdriver
-	"""
-	options = Options()
-	options.add_argument("--headless")
-	options.add_argument("download.panel.shown", False)
-	options.add_argument("download.manager.showWhenStarting", False)
-	options.add_argument("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
-	options.add_argument("browser.download.folderList", 2)
-	options.add_argument("browser.download.dir", path)
-	return webdriver.Firefox(options=options, service_log_path=os.path.devnull)
 
 # @TODO=use WebDriverWait and find_elements_by_*
 def runBrowser(driver, url):

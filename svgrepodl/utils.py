@@ -3,7 +3,6 @@ import time
 from .Message import Message
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 from progress.bar import IncrementalBar
 
 def downloader(url, path):
@@ -19,15 +18,14 @@ def browserConfiguration(path):
 	Returns:
 		[object] -- Firefox Webdriver
 	"""
-	profile = FirefoxProfile()
-	profile.set_preference("browser.download.panel.shown", False)
-	profile.set_preference("browser.download.manager.showWhenStarting", False)
-	profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
-	profile.set_preference("browser.download.folderList", 2)
-	profile.set_preference("browser.download.dir", path)
 	options = Options()
 	options.add_argument("--headless")
-	return webdriver.Firefox(firefox_profile=profile, options=options, service_log_path=os.path.devnull)
+	options.add_argument("download.panel.shown", False)
+	options.add_argument("download.manager.showWhenStarting", False)
+	options.add_argument("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
+	options.add_argument("browser.download.folderList", 2)
+	options.add_argument("browser.download.dir", path)
+	return webdriver.Firefox(options=options, service_log_path=os.path.devnull)
 
 # @TODO=use WebDriverWait and find_elements_by_*
 def runBrowser(driver, url):

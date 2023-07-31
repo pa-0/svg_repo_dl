@@ -23,6 +23,7 @@ def runBrowser(driver, url):
 	bar = IncrementalBar('📥 Icons Downloaded', max = len(all_links))
 	
 	for i, link in  enumerate(all_links):
+		print(link,'\n')
 		driver.execute_script('''window.open("'''+link+'''","_blank");''')
 		bar.next()
 	print('\n')

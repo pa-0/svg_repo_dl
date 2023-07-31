@@ -24,19 +24,21 @@ def runBrowser(driver, url, path):
   """
   
   n = 0
+  m = 0
   while True:
     n += 1
     
     driver.get(url + '/' + str(n))
     time.sleep(10) # you want to wait longer, if your internet connection is slow
-    print('inspecting',url)
+    print('>>>> inspecting',url)
     all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a img"); links.forEach(img => all_links.push(img.src)); return all_links');
     if len(all_links) == 0:
       print('no more icons to download\n')
       break
       
     for i, link in  enumerate(all_links):
-      print('downloading',link)
+      m += 1
+      print('downloading icon #' + str(m),link)
       os.system('wget --quiet ' + link + ' -O ' + path + '/' + link.rsplit('/',1)[1])
   driver.close()
   Message.success('🎉 Download done!')

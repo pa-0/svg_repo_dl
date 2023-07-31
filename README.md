@@ -7,7 +7,7 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/AllanCerveaux/svg_repo_dl/blob/master/LICENSE)
 </div>
 
-> Nota bene: this repository is based on its [original](https://github.com/AllanCerveaux/svg_repo_dl) but contains numerous bug fixes - including using `wget` instead of a headless Firefox browser for the actual download
+> Nota bene: this repository is based on its [original](https://github.com/AllanCerveaux/svg_repo_dl) from Allan Cerveaux but contains numerous bug fixes - including using `wget` instead of a headless Firefox browser for the actual download
 
 ___
 

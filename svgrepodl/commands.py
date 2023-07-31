@@ -33,9 +33,8 @@ def cli(path, url):
 		sys.exit()
 
 	if(urlHelpers.httpGetResponse() != 404):
-		dest = path + urlHelpers.collectionName();
 		Message.info('📣 Download will start for %s pack !' % urlHelpers.collectionName())
-		downloader(url, dest)
+		downloader(url, path)
 	else:
 		Message.error("😱 Cannot get this URL!")
 		sys.exit()

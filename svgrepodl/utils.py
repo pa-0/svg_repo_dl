@@ -6,7 +6,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from progress.bar import IncrementalBar
 
 def downloader(url, path):
-	driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+	driver = webdriver.Firefox()
 	runBrowser(driver, url)
 
 def browserConfiguration(path):

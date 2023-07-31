@@ -2,11 +2,11 @@ import os
 import time
 from .Message import Message
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from webdriver_manager.firefox import GeckoDriverManager
 from progress.bar import IncrementalBar
 
 def downloader(url, path):
-	driver = browserConfiguration(path)
+	driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 	runBrowser(driver, url)
 
 def browserConfiguration(path):

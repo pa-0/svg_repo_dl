@@ -20,7 +20,6 @@ setup(
 		'click',
 		'colored',
 		'requests',
-		'webdriver-manager',
 	],
 	classifiers=[
 		"Programming Language :: Python :: 3",

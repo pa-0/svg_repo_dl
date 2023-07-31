@@ -3,42 +3,40 @@ import time
 from .Message import Message
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from progress.bar import IncrementalBar
 
 def downloader(url, path):
   print('going to download into',path)
 
   options = Options()
-  options.set_preference("browser.download.panel.shown", False)
-  options.set_preference("browser.download.manager.showWhenStarting", False)
-  options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
-  options.set_preference("browser.download.folderList", 2)
-  options.set_preference("browser.download.dir", path)
   options.add_argument("--headless")
 
   driver = webdriver.Firefox(options=options)
-  runBrowser(driver, url)
+  runBrowser(driver, url, path)
 
 # @TODO=use WebDriverWait and find_elements_by_*
-def runBrowser(driver, url):
+def runBrowser(driver, url, path):
   """Run browser and start dowload
-  Run browser and start download with progress bar
+  Run browser and start download
   
   Arguments:
     driver {[object]} -- Browser 
     url {[string]} -- URL of SVGREPO Collection
   """
-  driver.get(url)
-  time.sleep(3) #REACT app need to sleep and wait app load.
-  print('got',url)
-  all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a"); links.forEach(url => all_links.push(url.href)); return all_links');
-  print('found',all_links)
-  bar = IncrementalBar('📥 Icons Downloaded', max = len(all_links))
   
-  for i, link in  enumerate(all_links):
-    print('\n',link)
-    driver.execute_script('''window.open("'''+link+'''","_blank");''')
-    bar.next()
-  print('\n')
+  n = 0
+  while True:
+    n += 1
+    
+    driver.get(url + '/' + str(n))
+    time.sleep(10) # you want to wait longer, if your internet connection is slow
+    print('inspecting',url)
+    all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a img"); links.forEach(img => all_links.push(img.src)); return all_links');
+    if len(all_links) == 0:
+      print('no more icons to download\n')
+      break
+      
+    for i, link in  enumerate(all_links):
+      print('downloading',link)
+      os.system('wget --quiet ' + link + ' -O ' + path + '/' + link.rsplit('/',1)[1])
   driver.close()
   Message.success('🎉 Download done!')

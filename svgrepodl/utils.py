@@ -21,7 +21,7 @@ def runBrowser(driver, url):
 	time.sleep(3) #REACT app need to sleep and wait app load.
 	print('got',url)
 	
-	all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP>a"); links.forEach(url => all_links.push(url.href)); return all_links');
+	all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a"); links.forEach(url => all_links.push(url.href)); return all_links');
 	print('found the following links which have to be downloaded:\n',all_links)
 	
 	bar = IncrementalBar('📥 Icons Downloaded', max = len(all_links))

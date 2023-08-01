@@ -55,7 +55,7 @@ The program saves the icons in `/home/Documents/icons/`.
 
 Enjoy !
 
-> **Nota bene**: SVG Repo seems to be slow - perhaps because of a massive interest in their icons. As a consequence, it may take a while to load one of their HTML pages. This script takes this time into account by waiting for 15 (fifteen!) seconds before analyzing a requested web page. Your milage may vary, but the author had good results with that long delay (and less success with shorter delays)
+> **Nota bene**: SVG Repo seems to be slow - perhaps because of a massive interest in their icons. As a consequence, it may take a while to load one of their HTML pages. This script takes this time into account by waiting for 15 (fifteen!) seconds before analyzing a requested web page. Your mileage may vary, but the author had good results with that long delay (and less success with shorter delays)
 >
 > In order to determine whether all icons could be downloaded or SVG Repo just did not respond in time, the number of successfully loaded icons is printed on the console - just compare that count with the promised number of icons in the collection of your interest.
 

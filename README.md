@@ -13,7 +13,7 @@ ___
 
 ## Requirements ##
 
-You may either install (and run) this downloader locally or run it within a Docker container. Python programmers may prefer the first variant while all other may prefer the Docker solution.
+You may either install (and run) this downloader locally or run it within a [Docker](https://www.docker.com/) container. Python programmers may prefer the first variant while all others may prefer the Docker solution.
 
 To run the downloader from your local environment you will need
 
@@ -23,7 +23,7 @@ To run the downloader from your local environment you will need
 
 otherwise you should install Docker first (which will remain useful in the future if you plan to experiment with other unknown software as well and still want to protect your PC)
 
-## Installation on local Machine ##
+## Local Installation ##
 
 (scroll down for the Docker-based solution)
 
@@ -43,7 +43,7 @@ cd svg_repo_dl
 ```bash
 sh install.sh
 ```
-## Usage from local Machine ##
+## Local Usage ##
 
 ```bash
 $ svgrepodl [URL] --path[-p]
@@ -59,14 +59,16 @@ Enjoy !
 >
 > In order to determine whether all icons could be downloaded or SVG Repo just did not respond in time, the number of successfully loaded icons is printed on the console - just compare that count with the promised number of icons in the collection of your interest.
 
-## Usage from within Docker ##
+## Docke Usage ##
 
-Two steps are needed to run svgrepodl within a Docker container:
+Make sure that you have Docker installed - for most people, the [Docker Desktop](https://www.docker.com/products/docker-desktop/) will be the best solution.
+
+Two steps are then needed to run svgrepodl encapsulated within a Docker container:
 
 1. build a Docker image<br>`docker build -t svg_repo_dl .`
 2. then run that image in order to download the desired icon collection<br>`docker run --rm -v <local-download-folder>:/transfer -e COLLECTION=<name-of-desired-collection> -t svg_repo_dl`
 
-In the `docker run` command you should replace the following placeholders with actual values:
+In the `docker run` command you should replace the following placeholders with your actual values:
 
 * `<local-download-folder>` - should be replaced with the actual path of the folder you want the icons downloaded into
 * `<name-of-desired-collection>` - should be replaced with the name of the desired icon collection (e.g., `dazzle-line-icons`)

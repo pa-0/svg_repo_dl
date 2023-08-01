@@ -53,7 +53,7 @@ Enjoy !
 
 Make sure that you have Docker installed - for most people, the [Docker Desktop](https://www.docker.com/products/docker-desktop/) will be the best solution.
 
-The folowing steps have to be taken to run svgrepodl encapsulated within a Docker container:
+The following steps have to be taken to run svgrepodl encapsulated within a Docker container:
 
 1. clone the repo<br>`git clone https://github.com/rozek/svg_repo_dl`
 2. navigate to the repository folder<br>`cd svg_repo_dl`

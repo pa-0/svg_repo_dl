@@ -21,24 +21,25 @@ def runBrowser(driver, url, path):
   Arguments:
     driver {[object]} -- Browser 
     url {[string]} -- URL of SVGREPO Collection
+    path {[string]} -- path of folder to save the icons in
   """
   
-  n = 0
-  m = 0
+  page_count = 0
+  icon_count = 0
   while True:
-    n += 1
+    page_count += 1
     
-    driver.get(url + '/' + str(n))
-    time.sleep(10) # you want to wait longer, if your internet connection is slow
+    driver.get(url + '/' + str(page_count))
+    time.sleep(15) # you want to wait longer, if your internet connection is slow
     print('>>>> inspecting',url)
     all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a img"); links.forEach(img => all_links.push(img.src)); return all_links');
     if len(all_links) == 0:
-      print('no more icons to download\n')
+      print('no more icons to download, got ' + str(icon_count) + ' icons so far\n')
       break
       
     for i, link in  enumerate(all_links):
-      m += 1
-      print('downloading icon #' + str(m),link)
+      icon_count += 1
+      print('downloading icon #' + str(icon_count),link)
       os.system('wget --quiet ' + link + ' -O ' + path + '/' + link.rsplit('/',1)[1])
   driver.close()
   Message.success('🎉 Download done!')

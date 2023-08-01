@@ -2,3 +2,4 @@ svgrepodl/__pycache__
 svgrepodl/geckodriver.log
 geckodriver.log
 svgrepodl.egg-info
+.DS_Store

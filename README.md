@@ -64,7 +64,7 @@ Enjoy !
 Two steps are needed to run svgrepodl within a Docker container:
 
 1. build a Docker image<br>`docker build -t svg_repo_dl .`
-2. the run that image in order to download the desired icon collection<br>`docker run -rm -v <local-download-folder>:/transfer -e COLLECTION=<name-of-desired-collection> -t svg_repo_dl`
+2. then run that image in order to download the desired icon collection<br>`docker run --rm -v <local-download-folder>:/transfer -e COLLECTION=<name-of-desired-collection> -t svg_repo_dl`
 
 In the `docker run` command you should replace the following placeholders with actual values:
 

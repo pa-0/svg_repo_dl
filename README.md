@@ -13,7 +13,7 @@ ___
 
 ## Requirements ##
 
-You may either install and run this downloader directly from your local environmanet or run it within a Docker container. Python programmers may prefer the first variant while all other may prefer the Docker solution.
+You may either install (and run) this downloader locally or run it within a Docker container. Python programmers may prefer the first variant while all other may prefer the Docker solution.
 
 To run the downloader from your local environment you will need
 

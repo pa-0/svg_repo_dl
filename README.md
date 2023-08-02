@@ -7,7 +7,7 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/AllanCerveaux/svg_repo_dl/blob/master/LICENSE)
 </div>
 
-> Nota bene: this repository is based on its [original](https://github.com/AllanCerveaux/svg_repo_dl) from Allan Cerveaux but contains numerous bug fixes - including using `wget` instead of a headless Firefox browser for the actual download. Additionally, it allows svg_repo_dl to be run from within a Docker container - this avoids polluting you local PC with Python stuff you may not need if you aren't a regular Python programmer.
+> Nota bene: this repository is based on its [original](https://github.com/AllanCerveaux/svg_repo_dl) from Allan Cerveaux but contains numerous bug fixes - including using `wget` instead of a headless Firefox browser for the actual download. Additionally, it allows svg_repo_dl to be run from within a Docker container - this avoids polluting your local PC with Python stuff you may not need if you aren't a regular Python programmer.
 
 ___
 

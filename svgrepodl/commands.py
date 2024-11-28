@@ -8,7 +8,7 @@ from os.path import expanduser
 def getUserDocumentPath():
 	"""Locate Personal User document folder
 	Returns:
-		[string] -- Return destanation download path
+		[string] -- Return destination download path
 	"""
 	return expanduser("~") + "/Documents/icons/"
 
@@ -16,7 +16,11 @@ def getUserDocumentPath():
 @click.option('--path', '-p', default=getUserDocumentPath(), help="Change download destination path.")
 @click.argument('url')
 def cli(path, url):
-	"""Run downloader to get SVGREPO pack
+	"""
+ 	SVG-REPO-DL
+
+   	Description:	SVG image collection downloader
+    			(fetches from svgrepo.com)
 	
 	Decorators:
 		click.command
@@ -28,7 +32,7 @@ def cli(path, url):
 	"""
 	urlHelpers = Url(url) 
 	if not urlHelpers.checker():
-		Message.error('😱 Oups URL provided not match !')
+		Message.error('😱 Oops URL provided not match!')
 		Message.info('💡 Your URL should look like this : https://svgrepo/collection/[id]')
 		sys.exit()
 

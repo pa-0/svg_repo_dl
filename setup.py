@@ -10,8 +10,8 @@ setup(
 	description="Pack Downloader for SVG REPO",
 	long_description=long_description,
 	long_description_content_type="text/markdown",
-	homepage="https://github.com/AllanCerveaux/svg_repo_dl/blob/master/README.md",
-	version = '0.0.1',
+	homepage="https://github.com/pa-0/svg_repo_dl/blob/master/README.md",
+	version = '0.2.1',
 	license="MIT",
 	py_modules=['svgrepodl'],
 	install_requires = [

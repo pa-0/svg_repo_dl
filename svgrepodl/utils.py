@@ -32,7 +32,7 @@ def runBrowser(driver, url, path):
     driver.get(url + '/' + str(page_count))
     time.sleep(15) # you want to wait longer, if your internet connection is slow
     print('>>>> inspecting',url)
-    all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__7ZTBP a img"); links.forEach(img => all_links.push(img.src)); return all_links');
+    all_links=driver.execute_script('all_links = []; links = document.querySelectorAll(".style_Node__GkK82 a img"); links.forEach(img => all_links.push(img.src)); return all_links');
     if len(all_links) == 0:
       print('no more icons to download, got ' + str(icon_count) + ' icons so far\n')
       break
